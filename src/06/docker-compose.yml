@@ -1,0 +1,14 @@
+version: "3.9"
+services:
+  server: 
+    user: root
+    build: ../05/
+    container_name: serv
+  webserver:
+    user: root
+    image: nginx
+    container_name: webserver
+    ports:
+      - "80:8080"
+    volumes:
+    - ./nginx.conf:/etc/nginx/nginx.conf
